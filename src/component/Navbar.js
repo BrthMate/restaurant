@@ -9,16 +9,20 @@ import {Link} from "react-router-dom"
     const [IsOpen, setIsOpen] = useState(false)
 
     const clickMenu = () =>{
-      IsOpen ? setIsOpen(false) : setIsOpen(true)
+      console.log(window.innerWidth)
+      if(window.innerWidth < 601){
+        IsOpen ? setIsOpen(false) : setIsOpen(true)
+      }
     }
 
-    useEffect(() => {
-      function handleResize() {
-        if(IsOpen && window.innerWidth > 600){
-          setIsOpen(false)
-        }
+    const  handleResize = () => {
+      if(window.innerWidth > 600){
+        setIsOpen(false)
+        return false;
       }
-    
+    }
+
+    useEffect(() => {   
       window.addEventListener('resize', handleResize)
     })
 
