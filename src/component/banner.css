@@ -1,0 +1,12 @@
+.banner-container{
+    top: 122px;
+    position: absolute;
+    z-index: 6;
+    background-color: var(--light);
+    font-size: 5rem;
+    left: 15%;
+    font-family: var(--Stint);
+    font-size: 6rem;
+    text-align: center;
+    padding: 20px;
+}

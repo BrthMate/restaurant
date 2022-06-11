@@ -1,0 +1,153 @@
+.placeCard-box{
+    display: flex;
+    color: var(--dark);
+    transform: translateY(-100px);
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 250px;
+}
+
+.placeCard-box:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.placeCard-box:last-child{
+    margin-bottom: 0px;
+}
+
+.placeCard-box>span{
+    max-width: 50%;
+    position: relative;
+}
+
+.placeCard-box>span>div{
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.place-img{
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+    transition: 0.5s;
+    transform: translate(0,0);
+}
+
+.img-hover:hover{
+    transform: scale(1.2);
+    
+}
+
+.back{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    object-fit: fill;
+    transform: translate(-40px, 25px);
+}
+
+.place-box{
+    padding: 25px;
+    width: 40%;
+    max-width: 350px;
+    margin: auto;
+
+}
+
+.place-box .name{
+    font-size: 3rem;
+    font-family: var(--Stint);
+    margin-bottom: 15px;
+}
+
+.place-box .text{
+    
+}
+
+.place-box .btn-to{
+    background: unset;
+    padding-bottom: 5px;
+    display: flex;
+    position: relative;
+}
+
+.links{
+    color: var(--dark);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.box-icon-container{
+    position: absolute;
+    padding: 40px;
+    right: -75px;
+    border-radius: 50%;
+    border: 1px dashed var(--dark);
+    top:-5px;
+    animation-name: spin;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
+}
+
+.btn-to .arrow-box{
+    position: absolute;
+    right: -71px;
+    top: -1px;
+    margin: 20px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.arrow-box box-icon{
+    fill: var(--dark);
+}
+
+.btn-to:hover .arrow-box {
+    background: #eda728;
+    margin: 0;
+    padding: 20px;
+}
+
+@media screen and (max-width:900px){
+
+    .placeCard-box:nth-child(even),.placeCard-box{
+        flex-direction: column;
+    }
+
+    .placeCard-box{
+        margin-bottom: 100px;
+    }
+    
+    .place-box{
+        padding: 25px;
+        width: 80%;
+        margin: unset;
+        max-width: unset;   
+    }
+
+    .place-box .name{
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width:400px){
+
+    .placeCard-box>span,.place-box{
+        width: 100%;
+    }
+
+    .back{
+        display: none;
+    }
+
+    .placeCard-box>span{
+        max-width: 80%;
+    }
+}

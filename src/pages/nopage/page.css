@@ -1,0 +1,11 @@
+.no-page{
+    font-size: 5vw;
+    height: calc(100vh - 127px);
+    color: var(--light);
+    width: 80%;
+    margin: auto;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

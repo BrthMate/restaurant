@@ -1,0 +1,41 @@
+.subs-container{
+    max-width: 500px;
+    margin: 25px 0;
+}
+
+.subs-container h1{
+    font-family: var(--Stint);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.subs-container span{
+    padding-bottom: 25px;
+}
+
+.subs-container form{
+    flex-direction: row;
+    margin: 25px 0;
+}
+
+.subs-container input{
+    margin: 0;
+    background: #464142;
+    color: var(--light);
+}
+
+.subs-container button{
+    margin: 0;
+    border: 0;
+    height: 70px;
+}
+
+@media screen and (max-width:900px){
+    .subs-container input{      
+        width: 100%;
+    }
+    .subs-container form{
+        flex-direction: column;
+    }
+}
