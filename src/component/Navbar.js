@@ -2,6 +2,7 @@ import {React,useState,useEffect} from 'react'
 import "./nav.css"
 import NavLink from './NavLink'
 import {HiMenuAlt1} from 'react-icons/hi'
+import {Link} from "react-router-dom"
 
   const Navbar = () => {
 
@@ -34,7 +35,13 @@ import {HiMenuAlt1} from 'react-icons/hi'
                   onClick={clickMenu}
                 />
               </span>
-              <NavLink className={IsOpen ? "mobil" : ""}/>
+              <ul className={IsOpen ? "mobil" : "" }>
+                <li onClick={clickMenu}><Link to="/">Home</Link></li>
+                <li onClick={clickMenu}><Link to="/Menu">Menu</Link></li>
+                <li className={IsOpen ? "mobil" : "" }>Logo</li>
+                <li onClick={clickMenu}><Link to="/contact">Contact</Link></li>
+                <li onClick={clickMenu}><Link to="/galery">Gallery</Link></li>
+              </ul>
               <div className={IsOpen ? 'basket-reverse btn-reverse from-center-reverse ' : 'basket btn-reverse from-center'}>
                   <box-icon name='basket'></box-icon>
               </div>

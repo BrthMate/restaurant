@@ -100,13 +100,16 @@ nav .container span{
     cursor: pointer;
     display: none;
 }
+
 .burger-menu{
     
 }
 
 @media screen and (max-width: 600px){
     nav ul{
-        display: none;
+        transform: translateY(-400px);
+        position: absolute;
+        flex-direction: column;
     }
 
     nav .mobil.container{
@@ -124,9 +127,10 @@ nav .container span{
         display: flex;
         flex-direction: column;
         width: 100vw;
-        top: 50px;
+        top: 70px;
         position: absolute;
         left: -2.5%;
+        transform: translateX(0);
     }
 
     .basket{
@@ -153,5 +157,38 @@ nav .container span{
 
     .mobil.container box-icon{
         fill:var(--light)
+    }
+
+    nav ul li{
+        padding: 20px;
+    }
+    
+    nav ul li a{
+        color: unset;
+        text-decoration: unset;
+        transform: translateY(-67px);
+        transition: 0.5s;
+    }
+    
+    nav ul.mobil li{
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        height: 67px;
+    }
+    
+    nav ul.mobil li a{
+        color: unset;
+        text-decoration: unset;
+        position: absolute;
+        right: 0;
+        left: 0;
+        transform: translateY(0px);
+        transition: 0.5s;
+        transition-delay: 1s;
+    }
+
+    li.mobil{
+        display: none;
     }
 }
