@@ -4,6 +4,10 @@ import Navbar from './component/Navbar';
 import Home from './pages/home/Home';
 import NoPage from './pages/nopage/NoPage';
 import Contact from './pages/contact/Contact';
+import Reservation from './pages/reservations/Reservation';
+import Order from './pages/order/Order';
+
+
 function App() {
   return (
     <>
@@ -12,6 +16,8 @@ function App() {
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/reservations" element={<Reservation />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/*" element={<NoPage />} />
         </Route>

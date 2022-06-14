@@ -23,12 +23,11 @@ const Form = () => {
     const errorsJson = {};
     
     const regexEmail =  /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/i;
-    const regexText = /[a-zA-Z]+/;
-    const regexNumber = /[0-9]+/;
+    const regexText = /^[a-zA-Z]+$/;
+    const regexNumber = /^[0-9]+$/;
     
     Object.keys(values).map(key =>{
       if(!values[key]){
-        console.log(values.reason)
         errorsJson[key] = "This field is required";
       }
     })
@@ -57,7 +56,7 @@ const Form = () => {
 
   useEffect(() => {
     if(Object.keys(errors).length == 0 && isSubmit){
-      console.log("siker")
+
     }
   }, [errors])
   

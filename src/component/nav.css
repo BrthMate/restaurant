@@ -105,7 +105,7 @@ nav .container span{
     
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
     nav ul{
         transform: translateY(-400px);
         position: absolute;

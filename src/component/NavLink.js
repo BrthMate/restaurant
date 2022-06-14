@@ -8,7 +8,7 @@ const NavLink = (props) => {
         <li><Link to="/Menu">Menu</Link></li>
         <li className={props.ul}>Logo</li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/galery">Gallery</Link></li>
+        <li><Link to="/Order">Order online</Link></li>
     </ul>
   )
 }

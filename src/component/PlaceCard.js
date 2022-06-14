@@ -40,12 +40,13 @@ const PlaceCard = () => {
                                 <div className= "name">{row.name}</div>
                                 <div className="text">{row.text}</div>
                                 <button className="btn-to">
-                                    <Link className= "links" to={row.link}>{row.name}</Link>
-                                    <div className='box-icon-container'>
-                                    </div>
-                                    <div className='arrow-box'>
-                                        <box-icon name='right-arrow-alt'></box-icon>
-                                    </div>
+                                    <Link className= "links" to={row.link}>{row.name}
+                                        <div className='box-icon-container'>
+                                        </div>
+                                        <div className='arrow-box'>
+                                            <box-icon name='right-arrow-alt'></box-icon>
+                                        </div>
+                                    </Link>
                                 </button>
                             </div>
                         </div>

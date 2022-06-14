@@ -9,14 +9,13 @@ import {Link} from "react-router-dom"
     const [IsOpen, setIsOpen] = useState(false)
 
     const clickMenu = () =>{
-      console.log(window.innerWidth)
-      if(window.innerWidth < 601){
+      if(window.innerWidth < 901){
         IsOpen ? setIsOpen(false) : setIsOpen(true)
       }
     }
 
     const  handleResize = () => {
-      if(window.innerWidth > 600){
+      if(window.innerWidth > 900){
         setIsOpen(false)
         return false;
       }
@@ -42,9 +41,11 @@ import {Link} from "react-router-dom"
               <ul className={IsOpen ? "mobil" : "" }>
                 <li onClick={clickMenu}><Link to="/">Home</Link></li>
                 <li onClick={clickMenu}><Link to="/Menu">Menu</Link></li>
-                <li className={IsOpen ? "mobil" : "" }>Logo</li>
                 <li onClick={clickMenu}><Link to="/contact">Contact</Link></li>
-                <li onClick={clickMenu}><Link to="/galery">Gallery</Link></li>
+                <li className={IsOpen ? "mobil" : "" }>Logo</li>
+                <li onClick={clickMenu}><Link to="/order">Order online</Link></li>
+                <li onClick={clickMenu}><Link to="/reservations">Reservations</Link></li>
+
               </ul>
               <div className={IsOpen ? 'basket-reverse btn-reverse from-center-reverse ' : 'basket btn-reverse from-center'}>
                   <box-icon name='basket'></box-icon>
