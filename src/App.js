@@ -6,6 +6,7 @@ import NoPage from './pages/nopage/NoPage';
 import Contact from './pages/contact/Contact';
 import Reservation from './pages/reservations/Reservation';
 import Order from './pages/order/Order';
+import Menu from './pages/menu/Menu';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/reservations" element={<Reservation />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/menu" element={<Menu />} />
           <Route path="/*" element={<NoPage />} />
         </Route>
       </Routes>

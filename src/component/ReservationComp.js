@@ -3,7 +3,7 @@ import PlaceData from './data/PlaceData'
 import "./reservation.css"
 const ReservationComp = () => {
   
-  const initValues = {place:"",date:"",time:"",name:""}
+  const initValues = {place:"",date:"",time:"",name:"",guests:""}
   const [values, setValues] = useState(initValues);
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -67,6 +67,9 @@ const ReservationComp = () => {
           <label >Name:</label>
           <input type="text" onChange={handleEvent} name="name" value={values.name}></input>
           <p>{errors.name}</p>
+          <label >Guests:</label>
+          <input type="number" onChange={handleEvent} name="guests" value={values.guests}></input>
+          <p>{errors.guests}</p>
           <button className="btn-reverse from-center" type='sumbit'>Reservation</button>
         </form>
     </>

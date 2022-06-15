@@ -19,27 +19,6 @@
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'><path d='M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z'></path></svg>");
     background-repeat: no-repeat;
     background-position: 95%;
-
-
-}
-
-.box::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    font-size: 28px;
-    line-height: 45px;
-    color: rgba(255, 255, 255, 0.5);
-    background-color: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-}
-
-.box:hover::before {
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 select::-ms-expand {
@@ -48,4 +27,17 @@ select::-ms-expand {
 
 input[type="date"]{
     margin-bottom: 25px;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button ,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

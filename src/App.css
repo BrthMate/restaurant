@@ -28,4 +28,5 @@ body{
   background: var(--dark);
   color: var(--light);
   font-family: var(--Monts);
+  overflow-x: hidden;
 }

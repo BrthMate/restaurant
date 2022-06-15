@@ -105,9 +105,9 @@ nav .container span{
     
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     nav ul{
-        transform: translateY(-400px);
+        transform: translateY(-1000px);
         position: absolute;
         flex-direction: column;
     }
