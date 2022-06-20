@@ -1,11 +1,10 @@
-import {React,useState,useEffect} from 'react'
+import {React,useState,useEffect,} from 'react'
 import "./nav.css"
 import NavLink from './NavLink'
 import {HiMenuAlt1} from 'react-icons/hi'
 import {Link} from "react-router-dom"
 
   const Navbar = () => {
-
     const [IsOpen, setIsOpen] = useState(false)
 
     const clickMenu = () =>{

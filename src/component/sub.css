@@ -39,3 +39,6 @@
         flex-direction: column;
     }
 }
+textarea:focus, input:focus{
+    outline: none;
+}
