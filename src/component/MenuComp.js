@@ -11,7 +11,7 @@ const MenuComp = () => {
     </div>
         {Data.Food.map((row,index) =>{
                 return(
-                    <div className='row'>
+                    <div className='row' key={index}>
                         <div className='item'>
                             <Link className='title' to={row.title}>{row.title}</Link>
                             <div className='price'>{row.price}</div>
@@ -27,7 +27,7 @@ const MenuComp = () => {
     </div>
         {Data.Drink.map((row,index) =>{
                 return(
-                    <div className='row'>
+                    <div className='row' key={index}>
                         <div className='item'>
                             <Link className='title' to={row.title}>{row.title}</Link>
                             <div className='price'>{row.price}</div>
@@ -43,7 +43,7 @@ const MenuComp = () => {
     </div>
         {Data.Dessert.map((row,index) =>{
                 return(
-                    <div className='row'>
+                    <div className='row' key={index}>
                         <div className='item'>
                             <Link className='title' to={row.title}>{row.title}</Link>
                             <div className='price'>{row.price}</div>
@@ -59,7 +59,7 @@ const MenuComp = () => {
     </div>
         {Data.HappyHours.map((row,index) =>{
                 return(
-                    <div className='row'>
+                    <div className='row' key={index}>
                         <div className='item'>
                             <Link className='title' to={row.title}>{row.title}</Link>
                             <div className='price'>{row.price}</div>

@@ -1,16 +1,23 @@
-import {React,useState,useEffect,} from 'react'
+import {React,useState,useEffect,useRef, useContext} from 'react'
 import "./nav.css"
 import NavLink from './NavLink'
 import {HiMenuAlt1} from 'react-icons/hi'
 import {Link} from "react-router-dom"
+import Basket from './Basket'
+import {Context} from './../App'
 
   const Navbar = () => {
-    const [IsOpen, setIsOpen] = useState(false)
 
+    const [IsOpen, setIsOpen] = useState(false)
+    const [IsBucketOpen, setIsBucketOpen] = useState(false)
+    const basket = useRef()
+    const items = useContext(Context)
+    
     const clickMenu = () =>{
       if(window.innerWidth < 1001){
         IsOpen ? setIsOpen(false) : setIsOpen(true)
       }
+      setIsBucketOpen(false)
     }
 
     const  handleResize = () => {
@@ -18,6 +25,10 @@ import {Link} from "react-router-dom"
         setIsOpen(false)
         return false;
       }
+    }
+
+    const clickBasket = () => {
+      IsBucketOpen === false ? setIsBucketOpen(true) : setIsBucketOpen(false)
     }
 
     useEffect(() => {   
@@ -45,12 +56,16 @@ import {Link} from "react-router-dom"
                 <li onClick={clickMenu}><Link to="/order">Order online</Link></li>
                 <li onClick={clickMenu}><Link to="/reservations">Reservations</Link></li>
               </ul>
-              <div className={IsOpen ? 'basket-reverse btn-reverse from-center-reverse ' : 'basket btn-reverse from-center'}>
+              <div onClick={clickBasket} className={IsOpen ? 'basket-reverse btn-reverse from-center-reverse ' : 'basket btn-reverse from-center'}>
                   <box-icon name='basket'></box-icon>
+                  <span className={ Object.keys(items.basket).length===0 ? "empty" : 'counter'}>{Object.keys(items.basket).length === 0 ? "" : Object.keys(items.basket).length }</span>
               </div>
             </div>
           </div>
       </nav>
+      <div className={IsBucketOpen ? "basket-container active" : "basket-container" } ref={basket}>
+        <Basket status={IsBucketOpen} setStatus={setIsBucketOpen}/>
+      </div>
     </>
     )
   }

@@ -2,10 +2,11 @@ import {React,useState,useRef, useContext} from 'react'
 import "./foodcard.css"
 import { Link } from "react-router-dom"
 import Data from "./data/MenuData"
+import {Context} from './../App'
+
 const FoodCard = () => {
 
-    //data._currentValue
-    //const first = useContext(content)
+    const items = useContext(Context)
 
     const [category, setCategory] = useState(Data.Food)
     const Items = useRef([]);
@@ -26,6 +27,10 @@ const FoodCard = () => {
         })
     }
 
+    const addToCart = async (row) =>{
+        await items.setbasket([ ...items.basket,{row , piece:1}])
+        await localStorage.setItem('basket', JSON.stringify(items.basket));
+    }
 
     return (
     <>
@@ -49,7 +54,7 @@ const FoodCard = () => {
                         </div>
                         <div className='options'>
                             <Link className='btn' to={"/menu/"+ row.title}>show</Link>
-                            <div className='basket btn-reverse from-center'>
+                            <div onClick={()=>{addToCart(row)}} className='basket btn-reverse from-center'>
                                 <box-icon name='basket'></box-icon>
                             </div>
                         </div>

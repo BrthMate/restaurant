@@ -105,6 +105,43 @@ nav .container span{
     
 }
 
+.basket-container{
+    min-width: 250px;
+    max-width: 600px;
+    background: var(--light);
+    color: var(--dark);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    transition: all 1s cubic-bezier(0.56, 0.34, 0.22, 0.52);
+    transform: translateX(100%);
+    transition-delay: .5s;
+}
+
+.basket-container.active{
+    transform: translateX(0%);
+}  
+
+.basket span.counter, .mobil span.counter{
+    position: absolute;
+    color: var(--light);
+    background: brown;
+    top:-5px;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    right: -5px;
+    border-radius: 50%;
+}
+
+.basket span.empty{
+    display: none;
+}
+
 @media screen and (max-width: 1000px){
     nav ul{
         transform: translateY(-1000px);
@@ -190,5 +227,11 @@ nav .container span{
 
     li.mobil{
         display: none;
+    }
+
+    .mobil span.empty{
+        display: none;
+        margin: 0;
+        padding: 0;
     }
 }

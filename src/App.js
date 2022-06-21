@@ -1,5 +1,5 @@
 import './App.css';
-import {createContext, React} from 'react';
+import {React, useState, createContext,useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './component/Navbar';
 import Home from './pages/home/Home';
@@ -9,15 +9,25 @@ import Reservation from './pages/reservations/Reservation';
 import Order from './pages/order/Order';
 import Menu from './pages/Menu/Menu'
 import DevPage  from './pages/nopage/DevPage';
-import Data from "./component/data/MenuData"
+
+
+export const Context = createContext(null)
 
 function App() {
 
-  const content = createContext()
+  const [basket, setbasket] = useState([])
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('basket'));
+    if (items) {
+      setbasket(items);
+    }
+  }, []);
+
   return (
-    <content.Provider data={Data}>
       <BrowserRouter>
-      <Navbar/>
+        <Context.Provider value={{basket,setbasket}}>
+        <Navbar />
         <Routes>
           <Route>
             <Route path="/" element={<Home />} />
@@ -29,10 +39,11 @@ function App() {
             <Route path="/menu/:title" element={<DevPage/>} />
             <Route path="/privacy" element={<DevPage/>} />
             <Route path="/place/:id" element={<DevPage/>} />
+            <Route path="/basket" element={<DevPage/>} />
           </Route>
         </Routes>
+        </Context.Provider>
       </BrowserRouter>
-    </content.Provider>
   );
 }
 

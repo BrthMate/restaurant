@@ -1,0 +1,92 @@
+.basket-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px  0 ;
+}
+
+.basket-box .basket{
+    width: 44px;
+}
+
+.basket-card-container{
+    margin: 10px;
+}
+
+.basket-card-container .row{
+    display: flex;
+}
+
+.basket-card-container .row img{
+    max-width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.basket-card-container .row .row-box{
+    width: 100%;
+}
+
+.basket-card-container .row .row-box .counter{
+    display: flex;
+    justify-content: center;
+}
+
+.basket-card-container .row-box .item{
+    margin: 0;
+    padding: 0;
+}
+
+.basket-card-container .row-box .item .title{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 5px 15px;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.basket-card-container input{
+    width: 10%;
+    padding: 0;
+    min-height: unset;
+}
+
+.basket-card-container button{
+    margin: 0;
+    height: unset;
+    padding: 0;
+    border: unset;
+}
+
+.basket-card-container .price,.basket-card-container a    {
+    margin: 10px 10px 0 15px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.basket-card-container .options{
+
+}
+
+.basket-card-container a{
+    border: unset;
+    border-bottom: 2px solid var(--dark);
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 5px 25px;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 5px 0;
+    text-decoration: unset;
+    color: black;
+    font-size: 0.8rem;
+}
