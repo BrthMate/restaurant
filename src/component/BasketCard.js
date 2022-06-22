@@ -8,14 +8,35 @@ const BasketCard = () => {
     const items = useContext(Context)
     
     const incItem = (el) =>{
-       items.basket.map((item) =>{
+        items.setbasket(items.basket.map((item) =>{
             if(item.row.id === el.row.id){
-                return{
-                    ...item.row, piece: el.price +1
-                };
+                item.row.piece = item.row.piece+1
             }
             return item;
-        })
+        }))
+        saveToLocalStore();
+    }
+
+    const desItem = (el) =>{
+        items.setbasket(items.basket.map((item) =>{
+            if(item.row.id === el.row.id){
+                item.row.piece = item.row.piece-1
+            }
+            return item;
+        }))
+        saveToLocalStore();
+    }
+
+    const setValue = () =>{
+
+    }
+
+    const saveToLocalStore = ()=>{
+        localStorage.setItem('basket', JSON.stringify(items.basket));
+    }
+
+    const deleteItem = (param) =>{
+        items.setbasket(items.basket.filter((el) => el.id !== param.id));
     }
 
     return (
@@ -34,10 +55,11 @@ const BasketCard = () => {
                                 />
                             </button>
                             <input 
-                                value={row.piece}
+                                value={row.row.piece}
+                                onChange={() => {setValue()}}
                             >
                             </input>
-                            <button className='basket'>
+                            <button className='basket' onClick={()=>{desItem(row)}}>
                                 <IoMdRemove 
                                     size="30"
                                 />

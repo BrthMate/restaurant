@@ -136,6 +136,7 @@ nav .container span{
     text-align: center;
     right: -5px;
     border-radius: 50%;
+    display: block;
 }
 
 .basket span.empty{

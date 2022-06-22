@@ -28,8 +28,17 @@ const FoodCard = () => {
     }
 
     const addToCart = async (row) =>{
-        await items.setbasket([ ...items.basket,{row , piece:1}])
-        await localStorage.setItem('basket', JSON.stringify(items.basket));
+        let IsExist = false
+        items.basket.map((item) =>{
+            if(item.row.id === row.id){
+                console.log("már szerepel a kosárban")
+                IsExist = true
+            }
+        })
+        if(!IsExist){ 
+            await items.setbasket([ ...items.basket,{row ,...row.piece = 1}])
+            await localStorage.setItem('basket', JSON.stringify(items.basket));
+        }
     }
 
     return (

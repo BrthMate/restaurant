@@ -28,12 +28,12 @@ const PlaceCard = () => {
         <>
             {PlaceData.map((row,index) =>{
                 return(
-                    <>
-                        <div className='placeCard-box' onMouseMove={handleMove}>
+                    
+                        <div className='placeCard-box' key={index} onMouseMove={handleMove}>
                             <span>
                                 <img className="place-img back" src={row.bg} alt="img"></img>
                                 <div>
-                                    <img className="place-img img-hover" ref={addImgs} src={row.img} key={index} alt="img"></img>
+                                    <img className="place-img img-hover" ref={addImgs} src={row.img} alt="img"></img>
                                 </div>
                             </span>
                             <div className="place-box">
@@ -50,7 +50,7 @@ const PlaceCard = () => {
                                 </button>
                             </div>
                         </div>
-                    </>    
+                       
                     ) 
             })}
         </>
