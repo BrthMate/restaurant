@@ -10,7 +10,7 @@ const BasketCard = () => {
     const incItem = (el) =>{
         items.setbasket(items.basket.map((item) =>{
             if(item.row.id === el.row.id){
-                item.row.piece = item.row.piece+1
+                item.row.piece = parseInt(item.row.piece)+1
             }
             return item;
         }))
@@ -27,17 +27,25 @@ const BasketCard = () => {
         saveToLocalStore();
     }
 
-    const setValue = () =>{
-
+    const setValue = (e,el) =>{
+        items.setbasket(items.basket.map((item) =>{
+            if(item.row.id === el.row.id){
+                item.row.piece = e.target.value
+            }
+            return item;
+        }))
+        saveToLocalStore();
     }
 
     const saveToLocalStore = ()=>{
         localStorage.setItem('basket', JSON.stringify(items.basket));
     }
 
-    const deleteItem = (param) =>{
+    /*const deleteItem = (param) =>{
         items.setbasket(items.basket.filter((el) => el.id !== param.id));
-    }
+    }*/
+
+
 
     return (
         items.basket.map((row,index) =>{
@@ -56,7 +64,7 @@ const BasketCard = () => {
                             </button>
                             <input 
                                 value={row.row.piece}
-                                onChange={() => {setValue()}}
+                                onChange={(e) => {setValue(e,row)}}
                             >
                             </input>
                             <button className='basket' onClick={()=>{desItem(row)}}>
