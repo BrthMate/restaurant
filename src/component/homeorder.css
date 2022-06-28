@@ -1,0 +1,7 @@
+
+.box .btn-to{
+    background: unset;
+    padding-bottom: 5px;
+    display: flex;
+    position: relative;
+}

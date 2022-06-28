@@ -5,6 +5,31 @@ img{
     object-position: top;
 }
 
-section{
-    
+.menu.about-us{
+    background-color: var(--dark);
+    margin-bottom: 250px;
+}
+
+.menu.order-from{
+    background: var(--light);
+    color: var(--dark);
+    margin: 0;
+    padding: 50px 0;
+}
+
+.menu-top{
+    padding: 50px 0;
+}
+
+.menu .title {
+    font-size: 3rem;
+    font-family: var(--Stint);
+    margin-bottom: 15px;
+}
+
+.menu.client-saying{
+    background-color: var(--light);
+    margin-top: 50px;
+    color: var(--dark);
+
 }

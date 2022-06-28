@@ -51,6 +51,7 @@ button{
     text-transform: uppercase;
     font-weight: 600;
     margin: 25px 0;
+    position: relative;
 }
 
 .d-flex span{

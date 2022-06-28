@@ -1,0 +1,43 @@
+.mobil-container {
+    display: flex;
+}
+
+.mobil-container .title{
+    font-size: 3rem;
+    font-family: var(--Stint);
+    margin-bottom: 15px;
+}
+
+.mobil-container  .box{
+    margin: auto;
+    padding: 25px;
+    max-width: 500px;
+}
+
+.app{
+    margin-top: 25px;
+}
+.app img{
+    max-width: 150px;
+    margin: 5px;
+    height: unset;
+}
+
+.mobil-container>img{
+    width: 50%;
+    object-fit: contain;
+    height: unset;
+}
+
+@media screen and (max-width: 900px){
+
+    .mobil-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobil-container>img {
+        width: 100%;
+    }
+    
+}
