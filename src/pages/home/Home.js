@@ -13,7 +13,7 @@ const Home = () => {
           <span>Check out our</span><br/>
           <span>offer</span>
       </div>
-      <div className='menu about-us'>
+      <div className='menu-page about-us'>
         <div className='container'>
           <div className='title'>
             WELCOME TO RESTAURANT
@@ -28,17 +28,17 @@ const Home = () => {
               <PlaceCard/>
           </div>
       </div>
-      <div className='menu order-from'>
+      <div className='menu-page order-from'>
         <div className='container'>
           <HomeOrder/>
         </div>
       </div>
-      <div className='menu-top mobil-app'>
+      <div className='menu-page mobil-app'>
         <div className='container'>
           <Mobile/>
         </div>
       </div>
-      <div className='menu client-saying'>
+      <div className='menu-page client-saying'>
         <div className='container'>
           <Feedback/>
         </div>

@@ -5,29 +5,29 @@ img{
     object-position: top;
 }
 
-.menu.about-us{
+.menu-page.about-us{
     background-color: var(--dark);
     margin-bottom: 250px;
 }
 
-.menu.order-from{
+.menu-page.order-from{
     background: var(--light);
     color: var(--dark);
     margin: 0;
     padding: 50px 0;
 }
 
-.menu-top{
+.menu-page-top{
     padding: 50px 0;
 }
 
-.menu .title {
+.menu-page .title {
     font-size: 3rem;
     font-family: var(--Stint);
     margin-bottom: 15px;
 }
 
-.menu.client-saying{
+.menu-page.client-saying{
     background-color: var(--light);
     margin-top: 50px;
     color: var(--dark);

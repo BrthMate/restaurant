@@ -39,7 +39,7 @@ const Feedback = () => {
             {FeedbackData.map((slide,index) =>{
             return(
                 <>
-                    <div className={index === current ? "active feedback-box" : "feedback-box"}>
+                    <div key={index} className={index === current ? "active feedback-box" : "feedback-box"}>
                         <div className= "text"><span className="mark left-mark">"</span>{slide.text}<span className="mark right-mark">"</span></div>
                     </div>
                 </>    
