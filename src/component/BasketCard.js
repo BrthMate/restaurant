@@ -11,6 +11,9 @@ const BasketCard = () => {
         items.setbasket(items.basket.map((item) =>{
             if(item.row.id === el.row.id){
                 item.row.piece = parseInt(item.row.piece)+1
+                if(item.row.piece == 0){
+                    deleteItem(item)
+                }
             }
             return item;
         }))
@@ -21,6 +24,9 @@ const BasketCard = () => {
         items.setbasket(items.basket.map((item) =>{
             if(item.row.id === el.row.id){
                 item.row.piece = item.row.piece-1
+                if(item.row.piece == 0){
+                    deleteItem(item)
+                }
             }
             return item;
         }))
@@ -31,6 +37,9 @@ const BasketCard = () => {
         items.setbasket(items.basket.map((item) =>{
             if(item.row.id === el.row.id){
                 item.row.piece = e.target.value
+                if(e.target.value == 0){
+                    deleteItem(item)
+                }
             }
             return item;
         }))
@@ -41,9 +50,9 @@ const BasketCard = () => {
         localStorage.setItem('basket', JSON.stringify(items.basket));
     }
 
-    /*const deleteItem = (param) =>{
-        items.setbasket(items.basket.filter((el) => el.id !== param.id));
-    }*/
+    const deleteItem = (param) =>{
+        items.setbasket(items.basket.filter((el) => el.row.id !== param.row.id));
+    }
 
 
 

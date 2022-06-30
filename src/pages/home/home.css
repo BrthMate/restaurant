@@ -8,6 +8,7 @@ img{
 .menu-page.about-us{
     background-color: var(--dark);
     margin-bottom: 250px;
+    margin-top: 125px;
 }
 
 .menu-page.order-from{
